@@ -2,6 +2,7 @@ import { gql } from 'apollo-server-core';
 
 export const typesProyecto = gql`
   type Proyecto {
+    _id: ID!
     nombre: String!
     objetivo: String!
     presupuesto: Float!
@@ -29,6 +30,7 @@ export const typesProyecto = gql`
     eliminarProyecto(id: ID!): Proyecto!
 
     editarProyecto(
+      id: ID!
       nombre: String!
       objetivo: String!
       presupuesto: Float!
