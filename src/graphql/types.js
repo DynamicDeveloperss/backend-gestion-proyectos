@@ -1,7 +1,8 @@
 import { gql } from 'apollo-server-core';
+import { typesUsuario } from './usuario/types.js';
 
-export const typeDefs = gql`
-  type Query {
-    saludo: String!
-  }
+const tiposGlobales = gql`
+  scalar Date
 `;
+
+export const typeDefs = [tiposGlobales, typesUsuario];

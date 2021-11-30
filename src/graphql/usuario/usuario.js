@@ -8,9 +8,9 @@ const schemaUsuario = new Schema(
     cedula: { type: String, required: true, unique: true },
     rol: { type: String, required: true },
     estado: { type: String, default: 'Pendiente' },
-    inscripciones: [{ type: Schema.Types.ObjectId, ref: 'Inscripcione' }],
+    // inscripciones: [{ type: Schema.Types.ObjectId, ref: 'Inscripcione' }],
   },
   { timestamps: false, versionKey: false }
 );
 
-export default model('Usuario', schemaUsuario);
+export const modeloUsuario = model('Usuario', schemaUsuario);

@@ -1,7 +1,3 @@
-export const resolvers = {
-  Query: {
-    saludo: () => {
-      return 'Hola mundo!';
-    },
-  },
-};
+import { resolversUsuario } from './usuario/resolvers.js';
+
+export const resolvers = [resolversUsuario];
