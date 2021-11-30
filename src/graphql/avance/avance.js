@@ -11,4 +11,4 @@ const schemaAvance = new Schema(
   { timestamps: false, versionKey: false }
 );
 
-export default model('Avance', schemaAvance);
+export const modeloAvance = model('Avance', schemaAvance);

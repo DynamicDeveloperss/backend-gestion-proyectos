@@ -8,7 +8,7 @@ export const typesProyecto = gql`
     presupuesto: Float!
     fechaInicio: Date!
     fechaFin: Date!
-    lider: ID!
+    lider: Usuario!
     estado: String!
     fase: String!
   }

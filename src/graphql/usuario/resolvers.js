@@ -20,6 +20,9 @@ export const resolversUsuario = {
     },
 
     eliminarUsuario: async (_, args) => {
+      /* 
+      todo: cuando se elimina un usuario se deben elinar sus respectivos avances e inscripciones 
+      */
       const usuarioEliminado = await modeloUsuario.findOneAndDelete({ _id: args.id });
       return usuarioEliminado;
     },

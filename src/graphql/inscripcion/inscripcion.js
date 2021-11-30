@@ -12,4 +12,4 @@ const schemaIncripcion = new Schema(
   { timestamps: false, versionKey: false }
 );
 
-export default model('Inscripcione', schemaIncripcion);
+export const modeloInscripcion = model('Inscripcione', schemaIncripcion);
