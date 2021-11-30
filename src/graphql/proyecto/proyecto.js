@@ -17,4 +17,4 @@ const schemaProyecto = new Schema(
   { timestamps: false, versionKey: false }
 );
 
-export default model('Proyecto', schemaProyecto);
+export const modeloProyecto = model('Proyecto', schemaProyecto);
