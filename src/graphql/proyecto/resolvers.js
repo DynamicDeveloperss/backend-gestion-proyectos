@@ -41,7 +41,8 @@ export const resolversProyecto = {
           lider: args.lider,
           estado: args.estado,
           fase: args.fase,
-        }
+        },
+        { new: true }
       );
       return poryectoEditado;
     },

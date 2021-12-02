@@ -33,7 +33,8 @@ export const resolversAvance = {
         { _id: args.id },
         {
           descripcion: args.descripcion,
-        }
+        },
+        { new: true }
       );
       return avanceEditado;
     },

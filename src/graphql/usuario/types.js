@@ -15,7 +15,13 @@ export const typesUsuario = gql`
   }
 
   type Mutation {
-    crearUsuario(nombre: String!, correo: String!, cedula: String!, rol: String!): Usuario!
+    crearUsuario(
+      nombre: String!
+      correo: String!
+      cedula: String!
+      rol: String!
+      password: String!
+    ): Usuario!
     eliminarUsuario(id: ID!): Usuario
     editarUsuario(
       id: ID!

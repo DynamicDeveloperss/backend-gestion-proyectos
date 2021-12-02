@@ -1,4 +1,5 @@
 import { modeloUsuario } from './usuario.js';
+import { encryptPassword } from '../../utils/authUtils.js';
 
 export const resolversUsuario = {
   Query: {
@@ -10,11 +11,13 @@ export const resolversUsuario = {
 
   Mutation: {
     crearUsuario: async (_, args) => {
+      const password = await encryptPassword(args.password);
       const nuevoUsuario = await modeloUsuario.create({
         nombre: args.nombre,
         cedula: args.cedula,
         correo: args.correo,
         rol: args.rol,
+        password: password,
       });
       return nuevoUsuario;
     },
@@ -36,7 +39,8 @@ export const resolversUsuario = {
           correo: args.correo,
           rol: args.rol,
           estado: args.estado,
-        }
+        },
+        { new: true }
       );
       return usuarioEditado;
     },
