@@ -12,6 +12,7 @@ export const typesUsuario = gql`
 
   type Query {
     obtenerUsuarios: [Usuario!]!
+    obtenerUsuario(_id: ID!): Usuario!
   }
 
   type Mutation {

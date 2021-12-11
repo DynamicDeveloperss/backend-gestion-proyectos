@@ -7,6 +7,10 @@ export const resolversUsuario = {
       const usuarios = await modeloUsuario.find();
       return usuarios;
     },
+    obtenerUsuario: async (_, args) => {
+      const usuario = await modeloUsuario.findById({ _id: args._id });
+      return usuario;
+    },
   },
 
   Mutation: {
