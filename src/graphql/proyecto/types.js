@@ -8,7 +8,7 @@ export const typesProyecto = gql`
     presupuesto: Float!
     fechaInicio: Date!
     fechaFin: Date!
-    lider: Usuario!
+    lider: String!
     estado: String!
     fase: String!
   }
@@ -24,7 +24,7 @@ export const typesProyecto = gql`
       presupuesto: Float!
       fechaInicio: Date!
       fechaFin: Date!
-      lider: ID!
+      lider: String!
     ): Proyecto!
 
     eliminarProyecto(id: ID!): Proyecto!
@@ -36,7 +36,7 @@ export const typesProyecto = gql`
       presupuesto: Float!
       fechaInicio: Date!
       fechaFin: Date!
-      lider: ID!
+      lider: String!
       estado: String!
       fase: String!
     ): Proyecto!

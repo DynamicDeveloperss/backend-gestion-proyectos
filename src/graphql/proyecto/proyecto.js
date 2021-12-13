@@ -8,7 +8,7 @@ const schemaProyecto = new Schema(
     presupuesto: { type: Number, required: true },
     fechaInicio: { type: Date, required: true },
     fechaFin: { type: Date, required: true },
-    lider: { type: Schema.Types.ObjectId, required: true, ref: 'Usuario' },
+    lider: { type: String, required: true },
     estado: { type: String, default: 'Inactivo' },
     fase: { type: String, default: 'Indefinida' },
     // inscripciones: [{ type: Schema.Types.ObjectId, ref: 'Inscripcione' }],

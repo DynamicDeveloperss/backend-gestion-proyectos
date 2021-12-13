@@ -41,7 +41,6 @@ export const resolversUsuario = {
           nombre: args.nombre,
           cedula: args.cedula,
           correo: args.correo,
-          rol: args.rol,
           estado: args.estado,
         },
         { new: true }

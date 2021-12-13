@@ -29,7 +29,6 @@ export const typesUsuario = gql`
       nombre: String!
       correo: String!
       cedula: String!
-      rol: String!
       estado: String!
     ): Usuario
   }

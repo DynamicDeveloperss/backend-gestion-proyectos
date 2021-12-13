@@ -3,7 +3,7 @@ import { modeloProyecto } from './proyecto.js';
 export const resolversProyecto = {
   Query: {
     obtenerProyectos: async () => {
-      const proyectos = await modeloProyecto.find().populate('lider');
+      const proyectos = await modeloProyecto.find();
       return proyectos;
     },
   },
