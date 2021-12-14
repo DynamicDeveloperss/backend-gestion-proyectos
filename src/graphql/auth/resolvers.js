@@ -1,5 +1,6 @@
-import { encryptPassword, generateToken } from '../../utils/authUtils.js';
+import { encryptPassword, generateToken, validatePassword } from '../../utils/authUtils.js';
 import { modeloUsuario } from '../usuario/usuario.js';
+import bcrypt from 'bcrypt';
 
 export const resolversAuth = {
   Mutation: {
@@ -23,6 +24,26 @@ export const resolversAuth = {
           estado: nuevoUsuario.estado,
         }),
       };
+    },
+
+    login: async (_, args) => {
+      const usuario = await modeloUsuario.findOne({ correo: args.correo });
+      if (await validatePassword(args.password, usuario.password)) {
+        return {
+          token: generateToken({
+            _id: usuario._id,
+            nombre: usuario.nombre,
+            cedula: usuario.cedula,
+            correo: usuario.correo,
+            rol: usuario.rol,
+            estado: usuario.estado,
+          }),
+        };
+      } else {
+        return {
+          error: 'Contraseña incorrecta',
+        };
+      }
     },
   },
 };
